@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "لیست تخفیفات";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="toolbar">
+                        <a href="javascript:void(0)" data-url="@Url.Action("Create","Discount")" data-dialog-mode="medium" class="btn btn-outline-success m-1 createItem"><span class="glyphicon glyphicon-plus"></span> افزودن</a>
+                        <a href="javascript:void(0)" data-url="" class="btn btn-outline-dark m-1 refresh"><span class="glyphicon glyphicon-refresh"></span> بروزرسانی</a>
+                    </div>
+                    <table class="table text-nowrap mb-0 align-middle"
+                           data-toolbar="#toolbar"
+                           data-toggle="table"
+                           data-striped="true"
+                           data-show-refresh="false"
+                           data-id-field="id"
+                           data-height="420"
+                           data-click-to-select="true"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-buttons-align="right"
+                           data-single-select="true"
+                           data-toolbar-align="right"
+                           data-naseri-additional-params="window.discountAdditionalParams"
+                           data-ajax="window.ajaxRequest"
+                           data-response-handler="window.responseHandler"
+                           data-expiration-url="@Url.Action("UpdateExpiration","Discount")"
+                           data-url="@Url.Action("LoadDiscounts","Discount")">
+                        <thead>
+                            <tr>
+                                <th data-field="state" data-width="1" data-checkbox="true" data-halign="center" data-align="center"></th>
+                                <th data-field="rowNumber" data-width="1">ردیف</th>
+                                <th data-field="code" data-width="1000">کد تخفیف</th>
+                                <th data-field="expireDateFa" data-width="1000">تاریخ انقضا</th>
+                                <th data-field="specifiedUserFullName" data-width="1000">کاربر</th>
+                                <th data-field="specifiedCourseTitle" data-width="1000">دوره</th>
+                                <th data-field="expirationTitle" data-width="1000">وضعیت</th>
+                                <th data-field="createdOnFa" data-width="1000">تاریخ ثبت</th>
+                                <th data-field="isExpired" data-formatter="window.discountExpirationFormatter" data-events="window.discountExpirationEvents" data-width="1000">عملیات</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

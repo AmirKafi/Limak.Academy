@@ -1,0 +1,54 @@
+﻿
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Limak.Academy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" type="image/png" href="~/Content/Images/Limak.Academy-logo.png" />
+
+    <title>لیماک - @ViewBag.Title</title>
+
+    <link href="~/Content/css/base.css" rel="stylesheet">
+    <link href="~/Content/css/template.css" rel="stylesheet">
+</head>
+
+<body class="red-skin rtl">
+    <!-- ============================================================== -->
+    <!-- Top header  -->
+    <!-- ============================================================== -->
+    <!-- Start Navigation -->
+    <div class="header header-light head-shadow">
+        <div class="container">
+            <nav id="navigation" class="navigation navigation-landscape">
+                <div class="nav-header">
+                    <a class="nav-brand fixed-logo" href="/"><img src="~/Content/Images/Limak.Academy-logo.png" class="logo" alt="" /></a>
+                    <div class="nav-toggle"></div>
+                </div>
+                <div class="nav-menus-wrapper" style="transition-property: none;">
+                    @await Html.PartialAsync("_Menu")
+
+                    @await Html.PartialAsync("_Account")
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- End Navigation -->
+    <div class="clearfix"></div>
+    <!-- ============================================================== -->
+    
+    @RenderBody()
+
+    <!-- ============================ Footer Start ================================== -->
+    @await Html.PartialAsync("_Footer")
+
+    <script src="~/Content/js/base.js"></script>
+    <script src="~/Content/js/home.js"></script>
+    <script src="~/Content/js/template.js"></script>
+    @RenderSection("scripts",false)
+</body>
+
+<!-- Mirrored from themezhub.net/learnup-demo-2/learnup/home-10.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Apr 2022 09:38:46 GMT -->
+</html>

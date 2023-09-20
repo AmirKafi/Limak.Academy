@@ -1,0 +1,238 @@
+﻿@{
+    ViewData["Title"] = "صفحه اصلی";
+}
+@model Limak.Academy.Application.Contract.Dto.HomeItemsDto
+
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+
+    
+    <!-- Top header  -->
+    <!-- ============================================================== -->
+    <!-- ============================ Hero Banner  Start================================== -->
+    <div class="image-cover hero_banner" data-overlay="0">
+        <div class="container">
+            <!-- Type -->
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="banner-search-2 transparent">
+                        <h1 class="big-header-capt cl_2 mb-2">اولین وب سایت<br> آموزشی آنلاین در ایران</h1>
+                        <p>هر موضوعی را در هر زمان مطالعه کنید. هزاران دوره آموزشی را با کمترین قیمت جستجو کنید!</p>
+                        <div class="mt-4">
+                            <div class="banner-search shadow_high">
+                                <div class="search_hero_wrapping">
+                                    <div class="row">
+
+                                        <div class="col-lg-10 col-md-10 col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-with-icon">
+                                                    <input type="text" class="form-control" id="SearchText" placeholder="میخوای واست بگردم؟">
+                                                    <img src="~/TemplateAssets/img/search.svg" class="search-icon" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-12 pr-0">
+                                            <div class="form-group none">
+                                                <a data-url="@Url.Action("Search","Home")" class="btn search-btn full-width" style="color:#253424">برو</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="flixio pt-5">
+                        <img class="img-fluid" src="~/TemplateAssets/img/edu_2.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Hero Banner End ================================== -->
+    <!-- ============================ Trips Facts Start ================================== -->
+    <div class="trips_wrap full light-colors">
+        <div class="container">
+            <div class="row m-0">
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="trips">
+                        <div class="trips_icons">
+                            <i class="ti-video-camera"></i>
+                        </div>
+                        <div class="trips_detail">
+                            <h4>100,000 معلم خصوصی با تجربه</h4>
+                            <p>با بیست درصد تخفیف تدریس را در کلاس آنلاین تجربه کنید.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="trips">
+                        <div class="trips_icons">
+                            <i class="ti-medall"></i>
+                        </div>
+                        <div class="trips_detail">
+                            <h4>ارائه مدرک معتبر</h4>
+                            <p>این موارد کاملاً ساده هستند و به راحتی قابل تشخیص هستند.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="trips none">
+                        <div class="trips_icons">
+                            <i class="ti-infinite"></i>
+                        </div>
+                        <div class="trips_detail">
+                            <h4>دوره آموزشی آنلاین در آموزشگاه</h4>
+                            <p>کلاس تدریس خصوصی با معلم خصوصی با امکانات کامل را امتحان کنید.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Trips Facts Start ================================== -->
+    <!-- ========================== Featured Category Section =============================== -->
+    <section class="bg-light">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <h2>دسته بندی <span class="theme-cl">دوره ها</span></h2>
+                    </div>
+                </div>
+            </div>
+
+            @await Html.PartialAsync("_Categories", Model.Categories)
+
+        </div>
+    </section>
+    <!-- ========================== Featured Category Section =============================== -->
+    <!-- ============================ Featured Courses Start ================================== -->
+    <section class="gray-bg">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <p>دسته بندی های منتخب</p>
+                        <h2>موضوعات و محورهای آموزشی <span class="theme-cl">پرمنتخب</span></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                @await Html.PartialAsync("_Courses", Model.Courses)
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ============================ Featured Courses End ================================== -->
+    <!-- ========================== About Facts List Section =============================== -->
+    <section>
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="about-short">
+                        <div class="sec-heading mb-3">
+                            <h2>مسیرهای <span class="theme-cl">یادگیری </span>و مجموعه های آموزشی</h2>
+                        </div>
+                        <p>حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+                        <p>برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+                        <div class="cource_facts">
+                            <ul>
+                                <li><span class="theme-cl">7+</span>ساعت آموزش</li>
+                                <li><span class="theme-cl">77</span>نفر دانشجو</li>
+                                <li><span class="theme-cl">84+</span>حوزه تخصصی</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-modern">درباره ما<span><i class="ti-arrow-left"></i></span></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="list_facts_wrap_img">
+
+                        <img src="~/TemplateAssets/img/edu_2.png" class="img-fluid" alt="">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================== About Facts List Section =============================== -->
+    <!-- ============================ Featured Instructor Start ================================== -->
+    <section class="pt-0">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <p>اساتید برتر</p>
+                        <h2>معلم های <span class="theme-cl">تدریس خصوصی</span> درس های مختلف</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div class="four_slide-dots articles arrow_middle" dir="rtl">
+
+                        @await Html.PartialAsync("_Teachers", Model.Teachers)
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ============================ Featured Instructor End ================================== -->
+    <!-- ========================== Articles Section =============================== -->
+    <section class="bg-light min-sec">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="sec-heading-flex">
+                        <h2 class="pl-2">آخرین مطالب</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                @await Html.PartialAsync("_Blogs", Model.Blogs)
+
+            </div>
+        </div>
+    </section>
+    <!-- ========================== Articles Section =============================== -->
+
+    <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+</div>

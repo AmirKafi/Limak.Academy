@@ -1,0 +1,100 @@
+﻿@using Limak.Academy.Utility.Extentions;
+@{
+    ViewData["Title"] = Model.Title;
+}
+@model Limak.Academy.Application.Contract.Dto.Course.CourseDetailsDto
+@{
+    var rnd = new Random();
+}
+
+<div class="course-details">
+    <section class="pt-5">
+        <input asp-for="CourseId" hidden />
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8">
+
+                    <div class="inline_edu_wraps mb-4">
+                        <h2>@Model.Title</h2>
+                    </div>
+
+                    <div class="property_video xl mb-4">
+                        <div class="thumb">
+                            <img class="pro_img img-fluid w100" src="@Model.FilePath" alt="">
+                        </div>
+
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="edu_wraper border">
+                        <h4 class="edu_title">توضیحات</h4>
+                        @Html.Raw(Model.Description)
+                    </div>
+
+                    <div class="edu_wraper border">
+                        <h4 class="edu_title">برچسب ها</h4>
+
+                        <div class="ed_rate_info">
+
+                            <ul class="cources_facts_list">
+                                @foreach (var item in Model.Tags)
+                                {
+                                    <li class="facts-@rnd.Next(1,11)">@item</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <!-- Course info -->
+                    <div class="ed_view_box style_3 border py-3">
+                        <div class="ed_view_price pr-4">
+                            <span>قیمت</span>
+                            @if(Model.DiscountPrice != null)
+                            {
+                                <h2 class="theme-cl mb-0">@((Model.Price - Model.DiscountPrice.Value).Separate3Digits()) تومان</h2>
+                                <div class="offer-box">
+                                    <span class="old-prc">@Model.Price.Separate3Digits() تومان</span>
+                                    <span class="offer-box">@Model.DiscountPrecentage% تخفیف</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <h2 class="theme-cl mb-0">@Model.Price.Separate3Digits() تومان</h2>                                
+                            }
+                        </div>
+
+                        <div class="p-4">
+                            <ul class="edu_list right">
+                                <li><i class="ti-shine"></i>نوع دوره:<strong>@Model.CourseTypeTitle</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="ed_view_link pb-3">
+                            <a href="#" data-url="@Url.Action("AddOrder","Order")" class="btn btn-success btn-addToCart enroll-btn">افزودن به سبد خرید<i class="ti-shopping-cart"></i></a>
+                        </div>
+
+                        <div class="px-4 pt-4 pb-0 b-t">
+                            <h5 class="mb-3">مدرس</h5>
+                            <div class="ins_info">
+                                <div class="ins_info_thumb">
+                                    <img src="@Model.TeacherFilePath" class="img-fluid" alt="">
+                                </div>
+                                <div class="ins_info_caption">
+                                    <h4 class="text-dark">@Model.TeacherName</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>

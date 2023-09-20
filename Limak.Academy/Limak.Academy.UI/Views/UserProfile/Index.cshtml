@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "پنل کاربری";
+}
+<section class="pt-5 container-fluid">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+
+                @await Html.PartialAsync("_UserMenu")
+
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="container-fluid" style="display:grid;padding-top:0">
+                    <img src="~/Content/Images/Profile.png" class="centerImg" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

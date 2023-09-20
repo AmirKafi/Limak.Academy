@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Limak.Academy.Application.Contract.Dto.Blogs.BlogListDto>
+
+@{
+    foreach (var item in Model)
+    {
+        <!-- Single Article -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="articles_grid_style">
+                <div class="articles_grid_thumb">
+                    <a href="/BlogDetails?blogId=@item.Id"><img src="@item.PicturePath" class="img-fluid" alt="" /></a>
+                </div>
+
+                <div class="articles_grid_caption">
+                    <h4>@item.Title</h4>
+                    <div class="articles_grid_author">
+                        توسط :
+                        @item.AuthorName
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

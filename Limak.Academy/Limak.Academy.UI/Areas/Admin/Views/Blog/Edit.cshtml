@@ -1,0 +1,56 @@
+﻿@using Limak.Academy.Framework.Core.Enum;
+@model Limak.Academy.Application.Contract.Dto.Blogs.BlogUpdateDto
+@{
+    ViewBag.Title = "ویرایش مطلب";
+}
+<div class="blog-create">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off" action="@Url.Action("Edit","Blog")">
+
+                <input asp-for="Id" hidden />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Title" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="Title">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="TextBody" class="form-label"></label><b class="text-danger">*</b>
+                            <textarea type="text" asp-for="TextBody" class="form-control"></textarea>
+                            <span class="field-validation-valid text-danger" asp-validation-for="TextBody"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="file-preview exist hidden logo" hidden>
+                                <div class="close fileinput-remove">&times;</div>
+                                <div class="file-preview-thumbnails">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <input hidden asp-for="Picture" />
+                            <label asp-for="Picture" class="form-label"></label>
+                            <input type="file"
+                                   class="form-control imageFile"
+                                   accept=".jpg"
+                                   data-preview-target=".file-preview.exist.logo"
+                                   data-url="@Url.Action("Image","File")"
+                                   data-folder-name="@FileFoldersEnum.Blog.ToString()"
+                                   asp-for="PictureFile" />
+                            <span asp-validation-for="PictureFile"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

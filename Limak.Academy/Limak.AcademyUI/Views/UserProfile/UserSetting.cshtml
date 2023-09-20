@@ -1,0 +1,118 @@
+﻿@model Limak.Academy.Application.Contract.Dto.Users.UserUpdateDto
+@{
+    ViewData["Title"] = "اطلاعات کاربری";
+}
+<section class="pt-5 container-fluid">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+
+                @await Html.PartialAsync("_UserMenu")
+
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 edu_wraper border">
+                <form method="post">
+                    <input asp-for="Id" hidden />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="FirstName" class="form-label"></label><b class="text-danger">*</b>
+                                <input type="text" class="form-control" asp-for="FirstName">
+                                <span class="field-validation-valid text-danger" asp-validation-for="FirstName"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="LastName" class="form-label"></label><b class="text-danger">*</b>
+                                <input type="text" class="form-control" asp-for="LastName">
+                                <span class="field-validation-valid text-danger" asp-validation-for="LastName"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber" class="form-label"></label><b class="text-danger">*</b>
+                                <input type="text" class="form-control mobile" asp-for="PhoneNumber">
+                                <span class="field-validation-valid text-danger" asp-validation-for="PhoneNumber"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Email" class="form-label"></label><b class="text-danger">*</b>
+                                <input type="text" class="form-control email" asp-for="Email">
+                                <span class="field-validation-valid text-danger" asp-validation-for="Email"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="UserName" class="form-label"></label><b class="text-danger">*</b>
+                                <input type="text" class="form-control letterOnly" asp-for="UserName">
+                                <span class="field-validation-valid text-danger" asp-validation-for="UserName"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="javascript:void(0)" data-url="@Url.Action("UserSetting","UserProfile")" class="btn btn-success btn-rounded btn-userSetting">
+                            <i class="ti-check"></i>
+                            ثبت تغییرات
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+@section scripts{
+    <script>
+
+        $(document).on("click", ".btn-userSetting", function (e) {
+            var $btnSave;
+            $btnSave = $(this);
+            var form = $btnSave.closest("form");
+            if (form.valid()) {
+                $btnSave.prop("disabled", true);
+                $.ajax({
+                    url: $btnSave.data("url"),
+                    method: "POST",
+                    data: new FormData(form.get(0)),
+                    processData: false,
+                    contentType: false,
+                    cache: false
+                }).done(function (data, textStatus, jqXHR) {
+                    var _ref3;
+                    autoDestroyToastr();
+                    if (data.resultStatus !== 1 && data.resultStatus !== -2) {
+                        toastr["error"]((_ref3 = data.message) != null ? _ref3 : resource.exception.saveError);
+                        return;
+                    }
+                    toastr["success"](resource.message.saveSuccess);
+
+                }).fail(function (msg) {
+                    autoDestroyToastr();
+                    content = msg.status === 403 ? msg.statusText : "Error";
+                    if (content === "Error") {
+                        toastr["error"](resource.exception.addError);
+                        return;
+                    }
+                    if (content === "Forbidden") {
+                        toastr["error"](resource.exception.addForbidden);
+                        return;
+                    }
+                }).always(function () {
+                    $btnSave.prop("disabled", false);
+                    manuallyDestroyToastr();
+                });
+            } else {
+                window.gotoErrorModal();
+            }
+        });
+    </script>
+}

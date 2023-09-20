@@ -1,0 +1,36 @@
+﻿<div class="dashboard-navbar" style="height:100% !important">
+
+    <div class="d-user-avater">
+        <img src="~/Content/Images/UserProfile.png" class="img-fluid avater" alt="">
+        <h4>@User.Claims.First(x=> x.Type == "UserFullName").Value</h4>
+    </div>
+
+    <div class="d-navigation">
+        <ul id="side-menu">
+            @*<li class="@(ViewBag.ActivePage == "UserFavourites" ? "active" : "")">
+                <a asp-action="UserFavourites" asp-area="" asp-controller="UserProfile">
+                    <i class="ti-heart"></i>
+                    مورد علاقه ها
+                </a>
+            </li>*@
+            <li class="@(ViewBag.ActivePage == "UserCourses" ? "active" : "")">
+                <a asp-action="UserCourses" asp-area="" asp-controller="UserProfile">
+                    <i class="ti-shopping-cart"></i>دوره های خریداری شده
+                </a>
+            </li>
+            <li class="@(ViewBag.ActivePage == "UserSetting" ? "active" : "")">
+                <a asp-action="UserSetting" asp-area="" asp-controller="UserProfile">
+                    <i class="ti-settings"></i>
+                    اطلاعات کاربری
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" data-url="@Url.Action("SignOut","Account")" class="signOut">
+                    <i class="ti-power-off"></i>
+                    خروج
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

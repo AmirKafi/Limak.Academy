@@ -1,0 +1,23 @@
+﻿@model Limak.Academy.Application.Contract.Dto.Category.CategoryUpdateDto
+@{
+    ViewBag.Title = "ویرایش دسته بندی";
+}
+<div class="category-create">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off" action="@Url.Action("Edit","Category")">
+                <input asp-for="Id" hidden>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Title" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="Title">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

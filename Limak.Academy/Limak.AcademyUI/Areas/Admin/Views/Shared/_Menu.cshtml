@@ -1,0 +1,102 @@
+﻿<!-- Sidebar Start -->
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+            <a asp-action="Index" asp-controller="Home" asp-area="Admin" class="text-nowrap logo-img" style="color:black">
+                <img src="~/Content/Images/Limak.Academy-logo.png" width="85px" alt="" />
+                آکادمی لیماک
+            </a>
+            <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                <i class="ti ti-x fs-8"></i>
+            </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">ثبت اطلاعات</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Teacher" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/teacher.svg" class="menu-icon"/>
+                        </span>
+                        <span class="hide-menu">مدرسین</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Category" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/stack.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">دسته بندی</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Course" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/course.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">دوره ها</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Blog" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/news.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">مطالب</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Discount" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/present.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">تخفیفات</span>
+                    </a>
+                </li>
+
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">مدیریت کاربران</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="User" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/accessibility-1.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">کاربران</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Message" asp-action="Index" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/messages.svg" class="menu-icon"/>
+                        </span>
+                        <span class="hide-menu">پیام ها</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">تنظیمات سایت</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-controller="Config" asp-action="ContactUsConfig" aria-expanded="false">
+                        <span>
+                            <img src="~/Content/svgs/phone-call.svg" class="menu-icon" />
+                        </span>
+                        <span class="hide-menu">تماس با ما</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<!--  Sidebar End -->

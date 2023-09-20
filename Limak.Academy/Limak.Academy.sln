@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Framework", "00-Framework", "{167432F8-0393-4322-8E1E-B20BBEF7F22E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Framework.Core", "Limak.Academy.Framework.Core\Limak.Academy.Framework.Core.csproj", "{AF202F9B-4973-49E1-88A8-303561FE19D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Utility", "Limak.Academy.Utility\Limak.Academy.Utility.csproj", "{2BA657D9-A8D1-4D46-8C17-9F67211FE765}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Domain", "01-Domain", "{05D5D162-6051-4118-89DF-FF7855EEA941}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Domain", "Limak.Academy.Domain\Limak.Academy.Domain.csproj", "{C9E8B955-77BB-4268-86BA-501A86E409A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Infrastructure", "02-Infrastructure", "{2DF354C1-7054-4571-9CAA-8ECEC12B353A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Config", "Limak.Academy.Config\Limak.Academy.Config.csproj", "{11EEC39A-0346-4F30-B234-51F91EFDA4DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Persistance", "Limak.Academy.Persistance\Limak.Academy.Persistance.csproj", "{4906F84B-C8C4-447F-B77D-0D7B7A75781F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Application", "03-Application", "{9DF3CA7A-9FBA-4A20-A34E-13E6AAF006B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Application", "Limak.Academy.Application\Limak.Academy.Application.csproj", "{F93809B6-7BA2-4B19-B9C8-A63870E47213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limak.Academy.Application.Contract", "Limak.Academy.Application.Contract\Limak.Academy.Application.Contract.csproj", "{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limak.AcademyUI", "Limak.AcademyUI\Limak.AcademyUI.csproj", "{01FF8E7A-C166-4BA8-A69A-1F5430404AD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF202F9B-4973-49E1-88A8-303561FE19D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF202F9B-4973-49E1-88A8-303561FE19D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF202F9B-4973-49E1-88A8-303561FE19D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF202F9B-4973-49E1-88A8-303561FE19D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA657D9-A8D1-4D46-8C17-9F67211FE765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA657D9-A8D1-4D46-8C17-9F67211FE765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA657D9-A8D1-4D46-8C17-9F67211FE765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA657D9-A8D1-4D46-8C17-9F67211FE765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E8B955-77BB-4268-86BA-501A86E409A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E8B955-77BB-4268-86BA-501A86E409A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E8B955-77BB-4268-86BA-501A86E409A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E8B955-77BB-4268-86BA-501A86E409A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EEC39A-0346-4F30-B234-51F91EFDA4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EEC39A-0346-4F30-B234-51F91EFDA4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EEC39A-0346-4F30-B234-51F91EFDA4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EEC39A-0346-4F30-B234-51F91EFDA4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4906F84B-C8C4-447F-B77D-0D7B7A75781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4906F84B-C8C4-447F-B77D-0D7B7A75781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4906F84B-C8C4-447F-B77D-0D7B7A75781F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4906F84B-C8C4-447F-B77D-0D7B7A75781F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93809B6-7BA2-4B19-B9C8-A63870E47213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93809B6-7BA2-4B19-B9C8-A63870E47213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93809B6-7BA2-4B19-B9C8-A63870E47213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93809B6-7BA2-4B19-B9C8-A63870E47213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01FF8E7A-C166-4BA8-A69A-1F5430404AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01FF8E7A-C166-4BA8-A69A-1F5430404AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01FF8E7A-C166-4BA8-A69A-1F5430404AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01FF8E7A-C166-4BA8-A69A-1F5430404AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF202F9B-4973-49E1-88A8-303561FE19D4} = {167432F8-0393-4322-8E1E-B20BBEF7F22E}
+		{2BA657D9-A8D1-4D46-8C17-9F67211FE765} = {167432F8-0393-4322-8E1E-B20BBEF7F22E}
+		{C9E8B955-77BB-4268-86BA-501A86E409A6} = {05D5D162-6051-4118-89DF-FF7855EEA941}
+		{11EEC39A-0346-4F30-B234-51F91EFDA4DC} = {2DF354C1-7054-4571-9CAA-8ECEC12B353A}
+		{4906F84B-C8C4-447F-B77D-0D7B7A75781F} = {2DF354C1-7054-4571-9CAA-8ECEC12B353A}
+		{F93809B6-7BA2-4B19-B9C8-A63870E47213} = {9DF3CA7A-9FBA-4A20-A34E-13E6AAF006B8}
+		{2AB3EB1E-4F8C-47A2-BB65-3EEDE44DD389} = {9DF3CA7A-9FBA-4A20-A34E-13E6AAF006B8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7388F14-B007-4631-B4D8-B00855AC910F}
+	EndGlobalSection
+EndGlobal

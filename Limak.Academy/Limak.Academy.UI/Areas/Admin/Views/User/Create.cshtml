@@ -1,0 +1,87 @@
+﻿@using Limak.Academy.Framework.Core.Enum;
+@model Limak.Academy.Application.Contract.Dto.Users.UserCreateDto
+@{
+    ViewBag.Title = "ثبت کاربر";
+}
+<div class="user-create">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off" action="@Url.Action("Create","User")">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="FirstName">
+                            <span class="field-validation-valid text-danger" asp-validation-for="FirstName"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="LastName" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="LastName">
+                            <span class="field-validation-valid text-danger" asp-validation-for="LastName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control mobile" asp-for="PhoneNumber">
+                            <span class="field-validation-valid text-danger" asp-validation-for="PhoneNumber"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Email" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control email" asp-for="Email">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Role" class="form-label"></label><b class="text-danger">*</b>
+                            <select asp-for="Role" class="form-control selectpicker" asp-items="ViewBag.Roles"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="Role"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="UserName" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control letterOnly" asp-for="UserName">
+                            <span class="field-validation-valid text-danger" asp-validation-for="UserName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Password" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="password" class="form-control letterOnly" asp-for="Password">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Password"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="password" class="form-control letterOnly" asp-for="ConfirmPassword">
+                            <span class="field-validation-valid text-danger" asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="IsActive" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="checkbox" class="bs-checkbox" asp-for="IsActive">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+﻿@using Limak.Academy.Domain.Enums;
+@{
+    ViewData["Title"] = "جست و جو";
+}
+@model Limak.Academy.Application.Contract.Dto.HomeItemsDto
+
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="breadcrumbs-wrap">
+                    <h1 class="breadcrumb-title">جست و جو</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">موارد منطبق با "@Model.SearchText"</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gray-bg">
+   @*  @if (Model.Categories.Count > 0)
+    {
+        <section class="bg-light">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div class="sec-heading center">
+                            <p>@Model.Categories.Count دسته بندی پیدا شد!</p>
+                        </div>
+                    </div>
+                </div>
+
+                @await Html.PartialAsync("_Categories", Model.Categories)
+
+            </div>
+        </section>
+    } *@
+    <!-- ========================== Featured Category Section =============================== -->
+    <!-- ============================ Featured Courses Start ================================== -->
+    @if (Model.Courses.Count > 0)
+    {
+        <section class="gray-bg">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div class="sec-heading center">
+                            <p>@Model.Courses.Count دوره پیدا شد!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    @await Html.PartialAsync("_Courses", Model.Courses)
+
+                </div>
+
+            </div>
+        </section>
+    }
+    <!-- ============================ Featured Courses End ================================== -->
+    <!-- ============================ Featured Instructor Start ================================== -->
+    @if (Model.Teachers.Count > 0)
+    {
+        <section class="bg-light min-sec">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div class="sec-heading center">
+                            <p>@Model.Teachers.Count مدرس پیدا شد!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <div class="four_slide-dots articles arrow_middle" dir="rtl">
+
+                            @await Html.PartialAsync("_Teachers", Model.Teachers)
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    }
+    <!-- ============================ Featured Instructor End ================================== -->
+    <!-- ========================== Articles Section =============================== -->
+    @if (Model.Blogs.Count > 0)
+    {
+        <br />
+        <section class="pt-0">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sec-heading-flex" style="justify-content:center">
+                            <p>@Model.Blogs.Count مطلب پیدا شد!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    @await Html.PartialAsync("_Blogs", Model.Blogs)
+
+                </div>
+            </div>
+        </section>
+    }
+</section>

@@ -1,0 +1,48 @@
+﻿@using Limak.Academy.Domain.Enums;
+@{
+    ViewData["Title"] = "مطالب";
+}
+@model List<Limak.Academy.Application.Contract.Dto.Blogs.BlogListDto >
+
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="breadcrumbs-wrap">
+                    <h1 class="breadcrumb-title">مطالب</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">لیست مطالب</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-0">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="articles_grid_style">
+                        <div class="articles_grid_thumb">
+                            <a href="/BlogDetails?blogId=@item.Id"><img src="@item.PicturePath" class="img-fluid" alt=""></a>
+                        </div>
+
+                        <div class="articles_grid_caption">
+                            <h4>@item.Title</h4>
+                            <div class="articles_grid_author">
+                                <p> نویسنده: </p>
+                                <p><a href="#">@item.AuthorName</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

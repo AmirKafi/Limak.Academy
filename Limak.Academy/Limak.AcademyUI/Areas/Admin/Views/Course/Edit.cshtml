@@ -1,0 +1,156 @@
+﻿@using Limak.Academy.Framework.Core.Enum;
+@model Limak.Academy.Application.Contract.Dto.Course.CourseUpdateDto
+@{
+    ViewBag.Title = "ثبت دوره";
+}
+<div class="course-create">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off" action="@Url.Action("Edit","Course")">
+                <input asp-for="Id" hidden />
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Title" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="Title">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CourseType" class="form-label"></label><b class="text-danger">*</b>
+                            <select asp-for="CourseType" class="form-control selectpicker" asp-items="ViewBag.CourseTypes"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="CourseType"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Price" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control price" asp-for="Price">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Price"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="TeacherId" class="form-label"></label><b class="text-danger">*</b>
+                            <select asp-for="TeacherId" class="form-control selectpicker" asp-items="ViewBag.Teachers"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="TeacherId"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CategoryId" class="form-label"></label><b class="text-danger">*</b>
+                            <select asp-for="CategoryId" class="form-control selectpicker" asp-items="ViewBag.Categories"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="CategoryId"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offlineCourse">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="FromTime" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control time" asp-for="FromTime">
+                            <span class="field-validation-valid text-danger" asp-validation-for="FromTime"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="ToTime" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control time" asp-for="ToTime">
+                            <span class="field-validation-valid text-danger" asp-validation-for="ToTime"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="FromDateLocal" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control shamsi" asp-for="FromDateLocal">
+                            <span class="field-validation-valid text-danger" asp-validation-for="FromDateLocal"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="ToDateLocal" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control shamsi" asp-for="ToDateLocal">
+                            <span class="field-validation-valid text-danger" asp-validation-for="ToDateLocal"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offlineCourse">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="EventAddress" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control" asp-for="EventAddress">
+                            <span class="field-validation-valid text-danger" asp-validation-for="EventAddress"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offlineCourse">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="EventDays" class="form-label"></label><b class="text-danger">*</b>
+                            <select asp-for="EventDays" class="form-control selectpicker" multiple asp-items="ViewBag.EventDaysList"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="EventDays"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row onlineCourse">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="LicenseKey" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" asp-for="LicenseKey" class="form-control" />
+                            <span class="field-validation-valid text-danger" asp-validation-for="LicenseKey"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="TagsLocal" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" asp-for="TagsLocal" class="form-control separate">
+                            <span class="field-validation-valid text-danger" asp-validation-for="TagsLocal"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Description" class="form-label"></label><b class="text-danger">*</b>
+                            <textarea asp-for="Description" class="form-control ckeditor"></textarea>
+                            <span class="field-validation-valid text-danger" asp-validation-for="Description"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="file-preview exist hidden logo" hidden>
+                                <div class="close fileinput-remove">&times;</div>
+                                <div class="file-preview-thumbnails">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <input hidden asp-for="FileName" />
+                            <label asp-for="FileName" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="file"
+                                   class="form-control imageFile"
+                                   accept=".jpg"
+                                   data-preview-target=".file-preview.exist.logo"
+                                   data-url="@Url.Action("Image","File")"
+                                   data-folder-name="@FileFoldersEnum.Course.ToString()"
+                                   data-file-path="@Model.FilePath"
+                                   asp-for="File" />
+                            <span asp-validation-for="File"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(".course-create #CourseType").trigger("change");
+</script>

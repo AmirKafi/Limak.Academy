@@ -1,0 +1,96 @@
+﻿@using Limak.Academy.Domain.Enums;
+@using Limak.Academy.Utility.Extentions;
+@{
+    if (ViewBag.CourseType == CourseTypeEnum.Online)
+    {
+        ViewData["Title"] = "دوره های مجازی";
+    }
+    else
+    {
+        ViewData["Title"] = "دوره های حضوری";
+    }
+}
+@model List<Limak.Academy.Application.Contract.Dto.Course.CourseListDto>
+
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="breadcrumbs-wrap">
+                    @if (ViewBag.CourseType == CourseTypeEnum.Online)
+                    {
+                        <h1 class="breadcrumb-title">لیست دوره های مجازی</h1>
+                    }
+                    else
+                    {
+                        <h1 class="breadcrumb-title">لیست دوره های حضوری</h1>
+                    }
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">دوره ها</a></li>
+                            @if (ViewBag.CourseType == CourseTypeEnum.Online)
+                            {
+                                <li class="breadcrumb-item active" aria-current="page">دوره های مجازی</li>
+                            }
+                            else
+                            {
+                                <li class="breadcrumb-item active" aria-current="page">دوره های حضوری</li>
+                            }
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-0">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <!-- Cource Grid 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="education_block_grid style_2">
+                        <div class="education_block_thumb n-shadow">
+                            <a href="/CourseDetails?courseId=@item.Id"><img src="@item.FilePath" class="img-fluid" alt=""></a>
+                            @if(item.DiscountPrice != null)
+                            {
+                                <div class="cources_price">
+                                    <span class="old-prc">@item.Price.Separate3Digits()</span>
+                                    @((item.Price - item.DiscountPrice.Value).Separate3Digits())
+                                    تومان
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="cources_price">
+                                    @item.Price.Separate3Digits()
+                                    تومان
+                                </div>                                
+                            }
+                        </div>
+
+                        <div class="education_block_body">
+                            <h4 class="bl-title"><a href="/CourseDetails?courseId=@item.Id">@item.Title</a></h4>
+                        </div>
+
+                        <div class="cources_info_style3">
+                            <ul>
+                                @* <li><i class="ti-eye ml-2"></i>6852 بازدید</li> *@
+                            </ul>
+                        </div>
+
+                        <div class="education_block_footer">
+                            <div class="education_block_author">
+                                <div class="path-img"><a href="#"><img src="@item.TeacherFilePath" class="img-fluid" alt=""></a></div>
+                                <h5><a href="#">@item.TeacherName</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

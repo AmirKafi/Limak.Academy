@@ -1,0 +1,23 @@
+{
+  "name": "jquery.disableSelection",
+  "version": "1.0.1",
+  "homepage": "https://github.com/vmtco/jquery.disableSelection",
+  "authors": [
+    "Vahid Mohammad Taheri <vmtco.com@gmail.com>"
+  ],
+  "main": "jquery.disableSelection.coffee",
+  "moduleType": "globals",
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "description": "Disable selection of text content within the set of matched elements",
+  "keywords": [
+    "selection",
+    "disable",
+    "jquery"
+  ],
+  "ignore": [
+    ".*"
+  ],
+  "license": "Apache"
+}

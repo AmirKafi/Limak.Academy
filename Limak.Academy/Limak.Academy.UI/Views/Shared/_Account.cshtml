@@ -1,0 +1,70 @@
+﻿@using Limak.Academy.Framework.Core.Enum;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    <ul class="nav-menu nav-menu-social align-to-left">
+        @if (User.Identity.IsAuthenticated)
+        {
+
+            <li>
+                <a asp-action="Index" asp-area="Admin" class="btn">
+                    <img src="~/Content/svgs/profile.svg" class="menu-icon" />
+                    <span class="theme-cl">@User.Claims.First(x=> x.Type == "UserFullName").Value.ToString()</span> خوش آمدید
+                </a>
+                <ul class="nav-dropdown nav-submenu">
+                    <li>
+                        <a asp-action="Index" asp-area="" asp-controller="UserProfile" class="btn">
+                            <img src="~/Content/svgs/accessibility-1.svg" class="menu-icon" />
+                            پنل کاربری
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-area="" asp-controller="Order" class="btn">
+                            <img src="~/Content/svgs/basket.svg" class="menu-icon" />
+                            سبد خرید
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-url="@Url.Action("ChangePassword","Account")" class="btn changePassword">
+                            <i class="ti-lock"></i>
+                            تغییر کلمه عبور
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-url="@Url.Action("SignOut","Account")" class="btn signOut">
+                            <img src="~/Content/svgs/logout.svg" class="menu-icon" />
+                            خروج
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            if (User.HasClaim("UserRole", "Admin"))
+            {
+                <li>
+                    <a asp-action="Index" asp-controller="Home" asp-area="Admin" class="btn">
+                        <img src="~/Content/svgs/cogwheel.svg" class="menu-icon" />
+                        ورود به پنل ادمین
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li>
+                <a href="javascript:void(0)" data-url="@Url.Action("Login","Account")" data-dialog-mode="medium" class="btn modalRaw">
+                    <img src="~/Content/svgs/login.svg" class="menu-icon" />
+                    ورود
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" data-url="@Url.Action("Register","Account")" data-dialog-mode="large" class="btn modalRaw">
+                    <img src="~/Content/svgs/register.svg" class="menu-icon" />
+                    ثبت نام
+                </a>
+            </li>
+        }
+    </ul>
+}

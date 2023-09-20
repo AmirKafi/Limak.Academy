@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "سبد خرید";
+}
+
+<style>
+    .rtl .table > thead > tr > th, .rtl .table > thead > tr > td, .rtl .table > tbody > tr > th, .rtl .table > tbody > tr > td, .rtl .table > tfoot > tr > th, .rtl .table > tfoot > tr > td {
+        text-align: center !important;
+        vertical-align: baseline;
+    }
+</style>
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <div class="breadcrumbs-wrap">
+                    <h1 class="breadcrumb-title"> سبد خرید</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a asp-action="Index" asp-area="" asp-controller="Home">خانه</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">سبد خرید</li>
+                        </ol>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-0">
+    <div class="container order-list">
+
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+
+                <div class="card" style="padding:1rem;border-radius:1rem">
+                    <div class="table-responsive" style="border-radius:0.5rem">
+                        <div id="toolbar">
+                            <a href="javascript:void(0)" data-url="" class="btn btn-primary m-1 refresh"><span class="glyphicon glyphicon-refresh"></span> بروزرسانی</a>
+                        </div>
+                        <table class="table text-nowrap mb-0 align-middle"
+                               id="CartTable"
+                               data-toolbar="#toolbar"
+                               data-toggle="table"
+                               data-striped="true"
+                               data-show-refresh="false"
+                               data-id-field="orderId"
+                               data-height="420"
+                               data-click-to-select="true"
+                               data-side-pagination="server"
+                               data-pagination="true"
+                               data-buttons-align="right"
+                               data-single-select="false"
+                               data-toolbar-align="right"
+                               data-naseri-additional-params="window.orderAdditionalParams"
+                               data-ajax="window.orderAjaxRequest"
+                               data-response-handler="window.responseHandler"
+                               data-url="@Url.Action("LoadOrders","Order")">
+                            <thead>
+                                <tr>
+                                    <th data-field="state" data-width="1" data-checkbox="true" data-halign="center" data-align="center"></th>
+                                    <th data-field="picturePath" data-width="1" data-formatter="window.showImgFormatter"></th>
+                                    <th data-field="title" data-width="1000">عنوان</th>
+                                    <th data-field="qty" data-width="1000">تعداد</th>
+                                    <th data-field="price" data-formatter="window.orderPriceFormatter" data-width="1000">قیمت واحد</th>
+                                    <th data-field="totalPrice" data-formatter="window.separateThreeDigit" data-width="1000">قیمت کل</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <br />
+                    <!-- Coupon Apply -->
+                    <div class="checkout_coupon checkout">
+                        <div class="checkout_coupon_flex">
+                            <form class="form-inline">
+                                <input class="form-control" type="search" id="DiscountCode" placeholder="کد تخفیف">
+                                <button type="button" class="btn btn-primary mr-2 apply-discount" data-url="@Url.Action("GetValidDiscount","Order")">اعمال تخفیف</button>
+                            </form>
+                        </div>
+                        <div class="ckt_last">
+                            <form class="form-inline">
+                                <button type="button" class="btn btn-primary removeAllOrders" data-url="@Url.Action("RemoveAllOrders","Order")">خالی کردن سبد</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <!-- Total Cart -->
+                <div class="cart_totals checkout" style="padding:1rem;border-radius:1rem">
+                    <h4>صورت حساب</h4>
+                    <div class="cart-wrap">
+                        <ul class="cart_list">
+                            <li>قیمت<strong><span id="TotalPrice">0</span> تومان</strong></li>
+                            <li>مالیات بر ارزش افزوده<strong><span id="TaxPrice">0</span> تومان</strong></li>
+                            <li>تخفیف<strong><span id="DiscountPrice">0</span> تومان</strong></li>
+                        </ul>
+                        <div class="flex_cart">
+                            <div class="flex_cart_1">
+                                <h6>جمع کل</h6>
+                            </div>
+                            <div class="flex_cart_2">
+                                <span id="PayablePrice">0</span> تومان
+                            </div>
+                        </div>
+                        <button type="button" class="btn checkout_btn pay-cart" data-url="@Url.Action("Pay","Payment")">پرداخت</button>
+                    </div>
+                </div>
+                <input readonly hidden id="TotalPriceInt" />
+                <input readonly hidden id="TaxPriceInt" />
+                <input readonly hidden id="DiscountPriceInt" />
+                <input readonly hidden id="PayablePriceInt" />
+                <input readonly hidden id="DiscountId" />
+            </div>
+        </div>
+
+    </div>
+</section>

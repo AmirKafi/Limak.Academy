@@ -1,0 +1,32 @@
+﻿@using Limak.Academy.Framework.Core.Enum;
+@model Limak.Academy.Application.Contract.Dto.Messages.MessageUpdateDto
+@{
+    ViewBag.Title = "مشاهده پیام";
+}
+<div class="message-read">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input type="text" class="form-control" readonly asp-for="Title">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="MessageBody" class="form-label"></label>
+                            <textarea class="form-control" readonly asp-for="MessageBody"></textarea>
+                            <span class="field-validation-valid text-danger" asp-validation-for="MessageBody"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

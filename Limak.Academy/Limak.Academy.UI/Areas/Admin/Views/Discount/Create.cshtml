@@ -1,0 +1,55 @@
+﻿@model Limak.Academy.Application.Contract.Dto.Discounts.DiscountCreateDto
+@{
+    ViewBag.Title = "ثبت کد تخفیف";
+}
+<div class="discount-create">
+    <div class="card">
+        <div class="card-body">
+            <form autocomplete="off" action="@Url.Action("Create","Discount")">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Code" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control letterOnly" asp-for="Code">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Code"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Precentage" class="form-label"></label><b class="text-danger">*</b>
+                            <input type="text" class="form-control numberOnly" asp-for="Precentage">
+                            <span class="field-validation-valid text-danger" asp-validation-for="Precentage"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" style="margin-top:2.5rem">
+                            <label asp-for="IsSpecifiedByUser" class="form-label"></label><b class="text-danger"></b>
+                            <input type="checkbox" class="bs-checkbox" asp-for="IsSpecifiedByUser">
+                        </div>
+                    </div>
+                    <div class="col-md-6 specifiedByUser">
+                        <div class="form-group">
+                            <label asp-for="SpecifiedUserId" class="form-label"></label><b class="text-danger"></b>
+                            <select asp-for="SpecifiedUserId" class="form-control selectpicker" asp-items="Model.Users"></select>
+                            <span class="field-validation-valid text-danger" asp-validation-for="SpecifiedUserId"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="ExpireDate" class="form-label"></label><b class="text-danger"></b>
+                            <input type="text" class="form-control shamsi" asp-for="ExpireDate">
+                            <span class="field-validation-valid text-danger" asp-validation-for="ExpireDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#IsSpecifiedByUser").trigger("click");
+</script>

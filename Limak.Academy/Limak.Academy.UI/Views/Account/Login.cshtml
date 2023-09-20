@@ -1,0 +1,42 @@
+﻿@model Limak.Academy.Application.Contract.Dto.Users.UserLoginDto
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div id="main-wrapper">
+
+    <!-- ========================== SignUp Elements ============================= -->
+    <section class="log-space">
+        <div class="container">
+            <div class="row justify-content-center">
+                <img src="~/Content/Images/login.png" style="max-width:25vh;max-height:25vh" />
+                <div class="col-lg-12 col-md-12 position-static p-4">
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                        <div class="log_wraps">
+                            <a href="index.html" class="log-logo_head"><img src="/assets/img/logo.png" class="img-fluid" width="80" alt="" /></a>
+                            <div class="log__heads" style="margin:auto">
+                                <h4 class="logs_title">ورود به <span class="theme-cl">حساب کاربری</span></h4>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="UserName" class="form-label"></label>
+                                <input asp-for="UserName" type="text" class="form-control letterOnly">
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Password"></label>
+                                <input asp-for="Password" type="password" class="form-control password">
+                            </div>
+
+                            <a href="javascript:void(0)" data-url="@Url.Action("Login","Account")" class="btn btn-theme btn-rounded btn-login">ورود</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================== Login Elements ============================= -->
+</div>
+
+

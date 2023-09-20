@@ -1,0 +1,259 @@
+﻿@using Limak.Academy.Domain.Enums;
+@using Limak.Academy.Utility.Extentions.DateTime;
+@{
+    ViewData["Title"] = "دوره های خریداری شده";
+}
+@model List<Limak.Academy.Application.Contract.Dto.Orders.OrderListDto>
+<style>
+
+    .accordion {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .accordion__item {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        background: #cfe3cf;
+        border-radius: 1rem;
+    }
+
+        .accordion__item:last-child {
+            margin-bottom: 0;
+        }
+
+    .accordion__title {
+        display: block;
+        position: relative;
+        height: 100px;
+        line-height: 40px;
+        padding: 0px 50px 0 20px;
+        font-size: 0.875em;
+        font-weight: 500;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        transition: background-color 0.2s;
+        border-radius: 1rem;
+    }
+
+        .accordion__title:hover {
+            background-color: #e6f0e6;
+        }
+
+        .accordion__title.active {
+            background: #e6f0e6;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+            .accordion__title.active .x7 {
+                transform: rotate(-90deg);
+            }
+
+                .accordion__title.active .x7 .btop {
+                    width: 67%;
+                    top: 2px;
+                    transform: translateY(-50%) rotate(-45deg);
+                    transform-origin: 50% 50%;
+                }
+
+                .accordion__title.active .x7 .bmid {
+                    opacity: 0;
+                }
+
+                .accordion__title.active .x7 .bbot {
+                    width: 67%;
+                    bottom: 2px;
+                    transform: translateY(50%) rotate(45deg);
+                    transform-origin: 50% 50%;
+                }
+
+    .accordion__content {
+        display: none;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #eee;
+        border-top: none;
+        line-height: 1.65;
+        padding: 25px;
+        background-color: #fff;
+        font-size: 0.875em;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .bmenu {
+        width: 26px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 12px;
+    }
+
+    .btop, .bmid, .bbot {
+        right: 0;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: #333;
+        border-radius: 1px;
+    }
+
+    .btop {
+        width: 40%;
+    }
+
+    .bmid {
+        width: 60%;
+    }
+
+    .bbot {
+        width: 80%;
+    }
+
+    .x7 {
+        transition: transform 0.3s ease-out;
+        transform-origin: 60% 75%;
+    }
+
+        .x7 .btop {
+            top: 0;
+            transition: width 0.3s, transform 0.3s, top 0s;
+            transition-timing-function: ease-out;
+        }
+
+        .x7 .bmid {
+            top: calc(50% - 1px);
+            transform-origin: 100% 50%;
+            transition: opacity 0.1s;
+            transition-timing-function: ease-out;
+        }
+
+        .x7 .bbot {
+            bottom: 0;
+            transition: width 0.3s, transform 0.3s, bottom 0s;
+            transition-timing-function: ease-out;
+        }
+
+    .img-rounded {
+        border-radius: 1rem;
+        height: 90px;
+        width: 90px;
+        margin-top: 5px;
+    }
+</style>
+
+<section class="pt-5 container-fluid">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+
+                @await Html.PartialAsync("_UserMenu")
+
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="container">
+
+                    <div class="alert alert-info">
+                        برای مشاهده جزئیات هر دوره بر روی آن کلیک کنید
+                    </div>
+                    <ul class="accordion">
+                        @foreach (var item in Model)
+                        {
+                            if (item.Course.CourseType == CourseTypeEnum.Online)
+                            {
+                                <li class="accordion__item">
+                                    <a class="accordion__title" href="javascript:void(0)">
+                                        <div class="flex items-center justify-between md:flex-row">
+                                            <img src="@item.Course.FilePath" class="img-rounded" />
+                                            <div class="flex items-center justify-around w-full my-2 md:my-0 ">
+                                                <div class="text-lg font-medium"> @item.Course.Title</div>
+                                                <div class="text-navy-dark">@item.CreatedOn.ToFa("g")</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="accordion__content">
+                                        <div class="w-full p-4 text-sm text-left break-words text-navy-dark rounded-2xl bg-dim" id="LicenseKey">
+                                            @item.LicenseKey
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="accordion__item">
+                                    <a class="accordion__title" href="javascript:void(0)">
+                                        <div class="flex items-center justify-between md:flex-row">
+                                            <img src="@item.Course.FilePath" class="img-rounded" />
+                                            <div class="flex items-center justify-around w-full my-2 md:my-0 ">
+                                                <div class="text-lg font-medium"> @item.Course.Title</div>
+                                                <div class="text-navy-dark">@item.CreatedOn.ToFa("g")</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="accordion__content">
+                                        <ul class="edu_list right">
+                                            <li>
+                                                <span>
+                                                    <img src="~/Content/svgs/person_pin.svg" class="menu-icon" />
+                                                </span>مدرس:<strong>@item.Course.TeacherName</strong>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <img src="~/Content/svgs/wb_sunny.svg" class="menu-icon" />
+                                                </span>روز های برگزاری دوره:<strong>@item.Course.EventDays</strong>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <img src="~/Content/svgs/calendar-2-1.svg" class="menu-icon" />
+                                                </span>تاریخ برگزاری:<strong>از @item.Course.FromDate.AsDateTime().ToFa() تا @item.Course.ToDate.AsDateTime().ToFa()</strong>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <img src="~/Content/svgs/time-clock-1.svg" class="menu-icon" />
+                                                </span>ساعات:<strong>از ساعت @item.Course.FromTime.Value.ToString(@"HH:mm") الی @item.Course.ToTime.Value.ToString(@"HH:mm")</strong>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <img src="~/Content/svgs/location_on.svg" class="menu-icon" />
+                                                </span>محل برگزاری:<strong>@item.Course.EventAddress</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+@section scripts{
+    <script>
+        $(function () {
+            $('.accordion').find('.accordion__title').click(function () {
+                // Adds active class
+                $(this).toggleClass('active');
+                // Expand or collapse this panel
+                $(this).next().slideToggle('fast');
+                // Hide the other panels
+                $('.accordion__content').not($(this).next()).slideUp('fast');
+                // Removes active class from other titles
+                $('.accordion__title').not($(this)).removeClass('active');
+            });
+        });
+
+    </script>
+}

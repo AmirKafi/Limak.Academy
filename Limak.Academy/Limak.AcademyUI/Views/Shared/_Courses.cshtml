@@ -1,0 +1,57 @@
+﻿@using Limak.Academy.Utility.Extentions;
+@{
+    Random rnd = new Random();
+}
+@model List<Limak.Academy.Application.Contract.Dto.Course.CourseListDto>
+
+@foreach (var item in Model)
+{
+    <!-- Cource Grid 1 -->
+    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <div class="education_block_list_layout style-2">
+
+            <div class="education_block_thumb n-shadow">
+                <a href="/CourseDetails?courseId=@item.Id"><img src="@item.FilePath" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="list_layout_ecucation_caption">
+
+                <div class="education_block_body">
+                    <h4 class="bl-title"><a href="/CourseDetails?courseId=@item.Id">@item.Title</a></h4>
+                    <div class="_course_admin_ol12">مدرس: <strong>@item.TeacherName</strong></div>
+
+                    <div class="_course_less_infor">
+                        <ul>
+                            <li><span class="class online"></span>@item.CourseTypeTitle</li>
+                        </ul>
+                    </div>
+
+                    <div class="course_rate_system_wrap">
+                        <div class="_course_category_01"><span class="cat-@rnd.Next(1,11)">@item.CategoryTitle</span></div>
+                    </div>
+                </div>
+
+                <div class="education_block_footer">
+                    @if (item.DiscountPrice != null)
+                    {
+                        <span class="old-prc">@item.Price.Separate3Digits()</span>
+                        <div class="cources_price">
+                            @((item.Price - item.DiscountPrice.Value).Separate3Digits()) تومان
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="cources_price">@item.Price.Separate3Digits() تومان</div>
+                    }
+                    <div class="cources_info_style3">
+                        <a href="/CourseDetails?courseId=@item.Id">
+                            <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>مشاهده</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}

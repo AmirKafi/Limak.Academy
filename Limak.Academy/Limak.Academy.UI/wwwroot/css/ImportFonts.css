@@ -1,0 +1,73 @@
+﻿/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	CrmX Admin - Responsive Admin Template
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body, layout
+2. Header
+3. menu
+4. Form-element and progress bar
+5. Box
+6. User card
+7. tab
+8. google map
+9. wizard
+10. weather
+11. Chat and info-box
+12. timeline
+13. Button
+14. callout
+15. tab
+16. pagination
+17. data table
+18. direct-chat
+19. modal
+20. widget
+21. treevie
+22. mailbox
+23. lockscreen
+24. login-box
+25. social btn
+26. color Skin
+
+-------------------------------------------------------------------*/
+
+/******************* 
+import RTL Styles 
+*******************/
+@import url(/Content/css/master_style_rtl.css);
+
+/******************* 
+import icon and fonts Styles 
+*******************/
+@import url(../Content/css/icons/font-awesome/css/font-awesome.css);
+@import url(../Content/css/icons/Ionicons/css/ionicons.css);
+@import url(../Content/css/icons/themify-icons/themify-icons.css);
+@import url(../Content/css/icons/linea-icons/linea.css);
+@import url(../Content/css/icons/glyphicons/glyphicon.css);
+@import url(../Content/css/icons/flag-icon-css/css/flag-icon.css);
+@import url(../Content/css/icons/material-design-iconic-font/css/materialdesignicons.css);
+@import url(../Content/css/icons/simple-line-icons/css/simple-line-icons.css);
+@import url(../Content/css/icons/cryptocoins-master/cryptocoins.css);
+@import url(../Content/css/icons/weather-icons/css/weather-icons.min.css);
+@import url(../Content/css/icons/iconmind/iconmind.css);
+@import url(../Content/css/icons/MaterialIcons/css/materialIcons.css);
+
+@import url(/Content/css/animate.css);
+
+@font-face {
+    font-family: "YekanNumbers";
+    src: url(../Content/fonts/YekanNumbers-Regular.eot);
+    src: url(../Content/fonts/YekanNumbers-Regular.eot?#iefix)format("embedded-opentype"), url(../Content/fonts/YekanNumbers-Regular.woff) format("woff"), url(../Content/fonts/YekanNumbers-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: inherit;
+}
+
+@font-face {
+    font-family: "IRANSansDN";
+    src: url(../Content/fonts/IRANSansWeb.woff2) format('truetype');
+}

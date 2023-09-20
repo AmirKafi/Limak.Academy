@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "لیست مدرسین";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="toolbar">
+                        <a href="javascript:void(0)" data-url="@Url.Action("Create","Teacher")" data-dialog-mode="medium" class="btn btn-outline-success m-1 createItem"><span class="glyphicon glyphicon-plus"></span> افزودن</a>
+                        <a href="javascript:void(0)" data-url="@Url.Action("Edit","Teacher")" data-dialog-mode="medium" class="btn btn-outline-warning m-1 editItem"><span class="glyphicon glyphicon-pencil"></span> ویرایش</a>
+                        <a href="javascript:void(0)" data-url="@Url.Action("Delete","Teacher")" class="btn btn-outline-danger m-1 deleteItem"><span class="glyphicon glyphicon-remove"></span> حذف</a>
+                        <a href="javascript:void(0)" data-url="" class="btn btn-outline-dark m-1 refresh"><span class="glyphicon glyphicon-refresh"></span> بروزرسانی</a>
+                    </div>
+                    <table class="table text-nowrap mb-0 align-middle"
+                           data-toolbar="#toolbar"
+                           data-toggle="table"
+                           data-striped="true"
+                           data-show-refresh="false"
+                           data-id-field="id"
+                           data-height="420"
+                           data-click-to-select="true"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-buttons-align="right"
+                           data-single-select="true"
+                           data-toolbar-align="right"
+                           data-naseri-additional-params="window.teacherAdditionalParams"
+                           data-ajax="window.ajaxRequest"
+                           data-response-handler="window.responseHandler"
+                           data-url="@Url.Action("LoadTeachers","Teacher")">
+                        <thead>
+                            <tr>
+                                <th data-field="state" data-width="1" data-checkbox="true" data-halign="center" data-align="center"></th>
+                                <th data-field="rowNumber" data-width="1">ردیف</th>
+                                <th data-field="fullName" data-width="1000">نام و نام خانوادگی مدرس</th>
+                                <th data-field="createdOnFa" data-width="1000">تاریخ ثبت</th>
+                                <th data-field="filePath" data-width="1000" data-formatter="window.showImageFormatter" data-events="window.showImageEvents">تصویر</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

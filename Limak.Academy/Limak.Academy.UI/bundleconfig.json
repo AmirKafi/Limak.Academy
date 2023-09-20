@@ -1,0 +1,155 @@
+[
+  {
+    "outputFileName": "wwwroot/Content/js/base.js",
+    "inputFiles": [
+      "wwwroot/bower_components/jquery/dist/jquery.js",
+      "wwwroot/bower_components/jquery.easing/js/jquery.easing.js",
+      "wwwroot/bower_components/jquery.easing/js/jquery.easing.compatibility.js",
+      "wwwroot/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
+      "wwwroot/bower_components/respond/dest/respond.min.js",
+      "wwwroot/bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.js",
+      "wwwroot/bower_components/toastr/toastr.min.js",
+      "wwwroot/bower_components/jquery-validation/dist/jquery.validate.js",
+      "wwwroot/bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "wwwroot/bower_components/jquery.validate.unobtrusive.bootstrap/jquery.validate.unobtrusive.bootstrap.js",
+      "wwwroot/bower_components/underscore/underscore.js",
+      "wwwroot/bower_components/jquery.disableSelection/jquery.disableSelection.js",
+      "wwwroot/bower_components/bootstrap-table/dist/bootstrap-table.js",
+      "wwwroot/bower_components/bootstrap-table/dist/extensions/export/bootstrap-table-export.js",
+      "wwwroot/bower_components/bootstrap-table/dist/locale/bootstrap-table-fa-IR.min.js",
+      "wwwroot/bower_components/bootstrap-table/dist/extensions/filter/bootstrap-table-filter.min.js",
+      "wwwroot/bower_components/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/FileSaver/FileSaver.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/js-xlsx/xlsx.core.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/jsPDF/jspdf.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/pdfmake/pdfmake.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/pdfmake/vfs_fonts.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/es6-promise/es6-promise.auto.min.js",
+      "wwwroot/bower_components/tableExport.jquery.plugin-master/libs/html2canvas/html2canvas.min.js",
+      "wwwroot/bower_components/bootstrap-select/dist/js/bootstrap-select.js",
+      "wwwroot/bower_components/ajax-bootstrap-select/js/ajax-bootstrap-select.min.js",
+      "wwwroot/bower_components/bootstrap-select/dist/js/i18n/defaults-fa_IR.min.js",
+      "wwwroot/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
+      "wwwroot/bower_components/gmaps/gmaps.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.plugin.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.plus.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.picker.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.persian.min.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.persian-fa.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars.picker-fa.js",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/js/jquery.calendars-fa.js",
+      "wwwroot/bower_components/html2canvas/build/html2canvas.min.js",
+      "wwwroot/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
+      "wwwroot/bower_components/persian.js/persian.js",
+      "wwwroot/bower_components/persian.js/dist/persian.min.esm.js",
+      "wwwroot/bower_components/persian.js/dist/persian.min.js",
+      "wwwroot/bower_components/persian.js/dist/persian.min.modern.js",
+      "wwwroot/bower_components/persian.js/dist/persian.min.umd.js",
+      "wwwroot/bower_components/fastclick/lib/fastclick.js",
+      "wwwroot/bower_components/chart.js/dist/Chart.bundle.js",
+      "wwwroot/bower_components/chart.js/samples/utils.js",
+      "wwwroot/bower_components/bootstrap-fileinput/js/fileinput.min.js",
+      "wwwroot/bower_components/bootstrap-fileinput/js/fileinput_locale_fa.js",
+      "wwwroot/bower_components/jdate/jdate.js",
+      "wwwroot/bower_components/chartjs-plugin-datalabels/chartjs-plugin-datalabels@0.7.0.js",
+      //"wwwroot/bower_components/bootbox.js/bootbox.js",
+      "wwwroot/CKEditor/ckeditor.js",
+      "wwwroot/CKEditor/translations/fa.js",
+      "wwwroot/js/_dialog.js",
+      "wwwroot/js/base.js",
+      "wwwroot/js/_bootstrapTable.js"
+
+    ],
+    "minify": {
+      "enabled": true,
+      "preserveImportantComments": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/js/adminTemplate.js",
+    "inputFiles": [
+      "wwwroot/AdminTemplateAssets/libs/jquery/dist/jquery.min.js",
+      "wwwroot/AdminTemplateAssets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "wwwroot/AdminTemplateAssets/js/sidebarmenu.js",
+      "wwwroot/AdminTemplateAssets/js/app.min.js",
+      "wwwroot/AdminTemplateAssets/libs/apexcharts/dist/apexcharts.min.js",
+      "wwwroot/AdminTemplateAssets/libs/simplebar/dist/simplebar.js",
+      "wwwroot/AdminTemplateAssets/js/dashboard.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "preserveImportantComments": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/js/home.js",
+    "inputFiles": [
+      "wwwroot/js/admin/pages.js",
+      "wwwroot/js/client/pages.js",
+      "wwwroot/js/client/account.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "preserveImportantComments": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/css/base.css",
+    "inputFiles": [
+      "wwwroot/css/ImportFonts.css",
+      "wwwroot/bower_components/bootstrap-table/dist/bootstrap-table.css",
+      "wwwroot/bower_components/bootstrap-select/dist/css/bootstrap-select.css",
+      "wwwroot/bower_components/ajax-bootstrap-select/css/ajax-bootstrap-select.min.css",
+      "wwwroot/bower_components/animate.css/animate.min.css",
+      "wwwroot/bower_components/jquery-accordion-menu/jquery-accordion-menu.css",
+      "wwwroot/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css",
+      "wwwroot/bower_components/jquery.calendars.2.1.0/css/jquery.calendars.picker.css",
+      "wwwroot/bower_components/bootstrap-fileinput/css/fileinput.min.css",
+      "wwwroot/bower_components/JointJS/build/rappid.min.css",
+      "wwwroot/bower_components/JointJS/css/theme-picker.css",
+      "wwwroot/css/hicoStyles.css",
+      "wwwroot/css/Style.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/css/adminTemplate.css",
+    "inputFiles": [
+      "wwwroot/AdminTemplateAssets/css/styles.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/css/template.css",
+    "inputFiles": [
+      "wwwroot/TemplateAssets/css/styles.css",
+      "wwwroot/TemplateAssets/css/color.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Content/js/template.js",
+    "inputFiles": [
+      "wwwroot/TemplateAssets/js/slick.js",
+      "wwwroot/TemplateAssets/js/select2.min.js",
+      "wwwroot/TemplateAssets/js/jquery.counterup.min.js",
+      "wwwroot/TemplateAssets/js/counterup.min.js",
+      "wwwroot/TemplateAssets/js/custom.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "preserveImportantComments": false
+    }
+  }
+]

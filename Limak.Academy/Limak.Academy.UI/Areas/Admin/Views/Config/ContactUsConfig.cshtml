@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Limak.Academy.Application.Contract.Dto.Configs.ConfigSaveDto
+@{
+    ViewBag.Title = "تنظیمات تماس با ما";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="config-contactUs-create">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="@Url.Action("ContactUsConfig","Config")" method="post">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label asp-for="Email" class="form-label"></label>
+                                        <input type="text" class="form-control email" asp-for="Email">
+                                        <span class="field-validation-valid text-danger" asp-validation-for="Email"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label asp-for="ContactNumber" class="form-label"></label>
+                                        <input type="text" class="form-control mobile" asp-for="ContactNumber">
+                                        <span class="field-validation-valid text-danger" asp-validation-for="ContactNumber"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label asp-for="Address" class="form-label"></label>
+                                        <input type="text" class="form-control" asp-for="Address">
+                                        <span class="field-validation-valid text-danger" asp-validation-for="Address"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="InstagramLink" class="form-label"></label>
+                                        <input type="text" class="form-control letterOnly" placeholder="https://instagram.com/example" style="text-align:left" asp-for="InstagramLink">
+                                        <span class="field-validation-valid text-danger" asp-validation-for="InstagramLink"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="TelegramLink" class="form-label"></label>
+                                        <input type="text" class="form-control letterOnly" placeholder="https://t.me/example" style="text-align:left" asp-for="TelegramLink">
+                                        <span class="field-validation-valid text-danger" asp-validation-for="TelegramLink"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;justify-content:center">
+                                <button type="button" class="btn btn-success btn-save" asp-action="ContactUsConfig" asp-controller="Config" asp-area="Admin">ثبت</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

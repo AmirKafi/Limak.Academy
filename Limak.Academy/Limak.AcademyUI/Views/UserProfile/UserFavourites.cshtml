@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "مورد علاقه ها";
+}
+<style>
+
+    .accordion {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .accordion__item {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        background: #cfe3cf;
+        border-radius: 1rem;
+    }
+
+        .accordion__item:last-child {
+            margin-bottom: 0;
+        }
+
+    .accordion__title {
+        display: block;
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        padding: 0px 50px 0 20px;
+        font-size: 0.875em;
+        font-weight: 500;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        transition: background-color 0.2s;
+        border-radius: 1rem;
+    }
+
+        .accordion__title:hover {
+            background-color: #e6f0e6;
+        }
+
+        .accordion__title.active {
+            background: #e6f0e6;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+            .accordion__title.active .x7 {
+                transform: rotate(-90deg);
+            }
+
+                .accordion__title.active .x7 .btop {
+                    width: 67%;
+                    top: 2px;
+                    transform: translateY(-50%) rotate(-45deg);
+                    transform-origin: 50% 50%;
+                }
+
+                .accordion__title.active .x7 .bmid {
+                    opacity: 0;
+                }
+
+                .accordion__title.active .x7 .bbot {
+                    width: 67%;
+                    bottom: 2px;
+                    transform: translateY(50%) rotate(45deg);
+                    transform-origin: 50% 50%;
+                }
+
+    .accordion__content {
+        display: none;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #eee;
+        border-top: none;
+        line-height: 1.65;
+        padding: 25px;
+        background-color: #fff;
+        font-size: 0.875em;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .bmenu {
+        width: 26px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 12px;
+    }
+
+    .btop, .bmid, .bbot {
+        right: 0;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: #333;
+        border-radius: 1px;
+    }
+
+    .btop {
+        width: 40%;
+    }
+
+    .bmid {
+        width: 60%;
+    }
+
+    .bbot {
+        width: 80%;
+    }
+
+    .x7 {
+        transition: transform 0.3s ease-out;
+        transform-origin: 60% 75%;
+    }
+
+        .x7 .btop {
+            top: 0;
+            transition: width 0.3s, transform 0.3s, top 0s;
+            transition-timing-function: ease-out;
+        }
+
+        .x7 .bmid {
+            top: calc(50% - 1px);
+            transform-origin: 100% 50%;
+            transition: opacity 0.1s;
+            transition-timing-function: ease-out;
+        }
+
+        .x7 .bbot {
+            bottom: 0;
+            transition: width 0.3s, transform 0.3s, bottom 0s;
+            transition-timing-function: ease-out;
+        }
+</style>
+
+<section class="pt-5 container-fluid">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+
+                @await Html.PartialAsync("_UserMenu")
+
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="container">
+
+                    <ul class="accordion">
+                        <li class="accordion__item">
+                            <a class="accordion__title" href="javascript:void(0)">
+                                This is a tittle, simply dummy text
+                                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                            </a>
+                            <p class="accordion__content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+@section scripts{
+    <script>
+        $(function () {
+            $('.accordion').find('.accordion__title').click(function () {
+                // Adds active class
+                $(this).toggleClass('active');
+                // Expand or collapse this panel
+                $(this).next().slideToggle('fast');
+                // Hide the other panels
+                $('.accordion__content').not($(this).next()).slideUp('fast');
+                // Removes active class from other titles
+                $('.accordion__title').not($(this)).removeClass('active');
+            });
+        });
+    </script>
+}

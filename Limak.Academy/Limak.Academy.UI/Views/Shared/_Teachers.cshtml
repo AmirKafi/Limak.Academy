@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Limak.Academy.Application.Contract.Dto.Teacher.TeacherListDto>
+
+
+@foreach (var item in Model)
+{
+    <!-- Single Slide -->
+    <div class="singles_items">
+        <div class="instructor_wrap mid">
+            <div class="instructor_thumb" style="border:1px solid black">
+                <a href="#"><img src="@item.FilePath" class="img-fluid" loading="lazy" alt=""></a>
+            </div>
+            <div class="instructor_caption">
+                <h4><a href="#">@item.FullName</a></h4>
+            </div>
+
+            <div class="cources_info_style3">
+                <ul>
+                    @*<li><i class="ti-user mr-2"></i>32نفر دانشجو</li>*@
+                    <li><i class="ti-book mr-2"></i>@item.Count دوره آموزشی</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+}
