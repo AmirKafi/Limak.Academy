@@ -41,8 +41,8 @@ namespace Limak.Academy.Application.Services.Users
                 var user = await _signInManager.PasswordSignInAsync(username, password, true, true);
                 if (!user.Succeeded)
                     result.SetException("نام کاربری یا کلمه عبور اشتباه است");
-
-                result.SetData(user);
+                else
+                    result.SetData(user);
             }
             catch (Exception ex)
             {
@@ -207,7 +207,7 @@ namespace Limak.Academy.Application.Services.Users
                 if (user is null)
                     throw new Exception("کاربر مورد نظر یافت نشد");
 
-                var res = await _userManager.ChangePasswordAsync(user,dto.OldPassword,dto.NewPassword);
+                var res = await _userManager.ChangePasswordAsync(user, dto.OldPassword, dto.NewPassword);
                 if (res.Succeeded)
                     result.SetData(true);
                 else
